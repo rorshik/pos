@@ -1,88 +1,89 @@
-# Welcome to Phantom OS #
+# Добро пожаловать в POS #
 
-Phantom OS is a persistent operating system. Its primary goal is to provide
-environment for programs thatsurvive OS reboot. Such an environment greatly
-simplifies software development and makes it possible to write programs that
-for example do not need a filesystem.
+POS - это персистентная операционная система. Ее основная цель - обеспечить
+среду для программ, которые выживают после перезагрузки ОС. Такая среда значительно
+упрощает разработку программного обеспечения и позволяет писать программы, которым,
+например, не нужна файловая система.
 
-Nevertheless, Phantom supports filesystems and all of the modern OS features.
+~Тем не менее, POS поддерживает файловые системы и все функции современной операционной системы.~
 
-For the details please refer to the [Phantom OS Programmer's guide](https://phantomdox.readthedocs.io/en/latest/).
+Для получения подробной информации, пожалуйста, обратитесь к [Руководству программиста Phantom OS](https://phantomfox.readthedocs.io/en/latest/).
 
-For the questions and discussion please visit [chat](https://gitter.im/PhantomOS/HowTo) or [Google Group](https://groups.google.com/forum/?pli=1#!forum/phantom-os).
+Для вопросов и обсуждения, пожалуйста, посетите [чат](https://gitter.im/PhantomOS/HowTo) или [Группу Google](https://groups.google.com/forum/?pli=1#!forum/phantom-os).
 
-## What Phantom OS is ##
+## Что такое POS ##
 
-* [Phantom OS Programmer's guide](https://phantomdox.readthedocs.io/en/latest/)
-* [Phantom Architecture in English](https://github.com/dzavalishin/phantomuserland/wiki/PhantomArchitecture)
-* [Short article in English - TheRegister](http://www.theregister.co.uk/2009/02/03/phantom_russian_os/)
-* [Big article in Russian - Open Systems Magazine](http://www.osp.ru/os/2011/03/13008200/)
+* [* [Руководство программиста Phantom OS](https://phantomdox.readthedocs.io/en/latest/)
+* [Архитектура Phantom на английском языке](https://github.com/dzavalishin/phantomuserland/wiki/PhantomArchitecture)
+* [Короткая статья на английском языке - TheRegister](http://www.theregister.co.uk/2009/02/03/phantom_russian_os/)
+* [Большая статья в журнале "Открытые системы" на русском языке](http://www.osp.ru/os/2011/03/13008200/)
 
-Basically, most of code we (the original team) upload is very straighforward
-and, sometimes, dumb. That, to some extent, is on purpose. We want to have
-a working system first and polish it next. Besides, not all the concepts and
-design desicions are final, so it is of no use to finalize all the 
-implementation desisions now as well.
+По сути, большая часть кода, который мы (первоначальная команда) загружаем, очень прямолинейна
+, а иногда и глупа. В какой-то степени это сделано специально. Сначала мы хотим получить
+работающую систему, а затем ее отшлифовать. Кроме того, не все концепции и
+дизайнерские решения являются окончательными, поэтому нет смысла финализировать все решения по
+реализации сейчас.
 
-Code is known to compile successfully with cygwin/linux gcc 4.3.4. Only the
-IA32 target is most complete and stable, the ARM port is in active development
-but very unstable, the MIPS port has just been started - compiles and can
-breathe for a second :), the amd64 port is incomplete and does not compile at all.
+Известно, что код успешно компилируется с cygwin/linux gcc 4.3.4. 
+Поддержка архитектуры:
+* IA32 - является наиболее полной и стабильной,
+* ARM - находится в активной разработке, но очень нестабильна,
+* MIPS - только что запущен - компилируется и может дышать секунду :),
+* amd64 - неполон и не работает компилировать вообще.
 
-## Current state
+## Текущее состояние
 
-See the [changelog](https://github.com/dzavalishin/phantomuserland/wiki/ChangeLog),
-have a look at [screenshots](https://github.com/dzavalishin/phantomuserland/wiki/ScreenShots).
-Here is the last one:
-
+Смотрите [список изменений](https://github.com/dzavalishin/phantomuserland/wiki/ChangeLog),
+взгляните на [скриншот](https://github.com/dzavalishin/phantomuserland/wiki/ScreenShots).
+Вот последний:
 ![](https://github.com/dzavalishin/phantomuserland/blob/master/doc/images/Phantom_screen_Controls_21_10_2019.png?raw=true)
 
-More screenshots: <https://github.com/dzavalishin/phantomuserland/wiki/ScreenShots>
+Другие скриншоты: <https://github.com/dzavalishin/phantomuserland/wiki/ScreenShots>
 
-## Docs
+## Документы
 
-[![Documentation Status](https://readthedocs.org/projects/phantomdox/badge/?version=latest)](https://phantomdox.readthedocs.io/en/latest/?badge=latest)
+[![Статус документов](https://readthedocs.org/projects/phantomdox/badge/?version=latest)](https://phantomdox.readthedocs.io/en/latest/?badge=latest)
      
-[Web Documentation](https://phantomdox.readthedocs.io/en/latest/) and [PDF](https://buildmedia.readthedocs.org/media/pdf/phantomdox/latest/phantomdox.pdf), and there's a lot of info in the [Wiki](https://github.com/dzavalishin/phantomuserland/wiki)
+[Web Документация](https://phantomdox.readthedocs.io/en/latest/) and [PDF](https://buildmedia.readthedocs.org/media/pdf/phantomdox/latest/phantomdox.pdf), и  есть много информации в [Wiki](https://github.com/dzavalishin/phantomuserland/wiki)
 
-## Building
+## Сборка
 
-Set the `PHANTOM_HOME` environment variable to the path of the Phantom repository root directory
-and `make all` there.
+Установите переменную окружения `PHANTOM_HOME` в путь к корневому каталогу POS репозитория
+и `make all` там.
 
-On Windows you will need [Cygwin](http://www.cygwin.com) to do that. Select at least: `gcc4`, `subversion`, `binutils`, `make`, `gdb`
-(see `etc/cygwin_get.cmd`)
+В Windows для этого вам понадобится [Cygwin](http://www.cygwin.com). Выберите как минимум: `gcc4`, `subversion`, `binutils`, `make`, `gdb`
+(смотрите `etc/cygwin_get.cmd`)
   
-See also [TOOLCHAIN](https://github.com/dzavalishin/phantomuserland/blob/master/TOOLCHAIN)
+Смотрите также [НАБОР ИНСТРУМЕНТОВ](https://github.com/dzavalishin/phantomuserland/blob/master/TOOLCHAIN)
 
-## Running
+## Запуск
 
 Run phantom.cmd/phantom.sh in `/run`
   
-See [doc/RUNNING](doc/RUNNING) for more details
+Смотрите [doc/RUNNING](doc/RUNNING) для получения более подробной информации
 
-## Debugging
+## Отладка
 
-Run QEMU (see above) and then - gdb in `/oldtree/kernel/phantom`
+Run QEMU (смотрите выше), а затем - gdb в `/oldtree/kernel/phantom`
 
-Kernel console is logged to `/run/serial0.log`
+Консоль ядра логируется в `/run/serial0.log`
 
-Kernel is able to send logging info to syslogd by UDP.
-Currently syslogd address is hardcoded in net_misc.c.
+Ядро может отправлять информацию о протоколировании в syslogd по UDP.
+В настоящее время адрес syslogd жестко закодирован в net_misc.c.
 
-## Directories
+## Каталоги
 
-* `oldtree/kernel/phantom` - kernel 
-* `phantom`                - libs and unix userland (user/apps)
-* `plib/sys/src`           - native phantom userland code
-* `run`                    - QEMU run/test environment
-* `tools/plc`              - phantom language compiler / java bytecode translator
+* `oldtree/kernel/phantom` - ядро 
+* `phantom`                - библиотеки и пользовательская среда unix (user/apps)
+* `plib/sys/src`           - нативный код POS
+* `run`                    - Среда запуска/тестирования QEMU
+* `tools/plc`              - компилятор POS / транслятор байт-кода java
 
-## Go on and take part!
+## Продолжайте и принимайте участие!
 
-[How to take part](https://github.com/dzavalishin/phantomuserland/wiki/HowToTakePart)
+[Как принять участие](https://github.com/dzavalishin/phantomuserland/wiki/HowToTakePart)
 
-### The kernel and the compiler
+### Ядро и компилятор
 
 Creating an unusual operating system is a very interesting thing to do. There are challenges on each and every step.
 Just to start with:
